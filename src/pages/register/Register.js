@@ -4,6 +4,7 @@ const Register = () => {
   return (
     <div>
       Registration page
+      <input type='text' placeholder='enter name'/>
     </div>
   )
 }
