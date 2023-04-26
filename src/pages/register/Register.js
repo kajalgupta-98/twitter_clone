@@ -6,6 +6,7 @@ import DefaultSignUp from '../../components/DefaultSignUp'
 import {Link} from "react-router-dom"
 
 const Register = () => {
+
     const [showCreateAccountPage, setShowCreateAccountPage ]= React.useState(false)
 
     const [name, setName] = React.useState("")
@@ -132,6 +133,7 @@ const Register = () => {
 
         </form >
     )
-}
+
+ 
 
 export default Register
