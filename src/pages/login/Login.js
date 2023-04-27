@@ -8,7 +8,9 @@ import { useSetRecoilState } from 'recoil'
 import userLoggedInStatus from '../../userLoggedInStatus'
 import SimpleSnackbar from '../../components/Snackbar'
 
+
 const Login = () => {
+
   const setIsUserLoggedIn = useSetRecoilState(userLoggedInStatus)
 
   const [contact, setContact] = useState("")
@@ -109,6 +111,7 @@ const Login = () => {
     </form>
         <SimpleSnackbar onClose={handleClose} open={open}  severity="success" message="Log in Success"/>
     </>
+
   )
 }
 
