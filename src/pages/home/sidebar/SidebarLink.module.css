@@ -1,17 +1,26 @@
 .SidebarLink{
         display:flex;
+        padding-left: 1.5rem;
         align-items:cover;
         cursor:pointer;
         border-radius: 30px;
     }
  .SidebarLink:hover{
-    background-color:#e8f5fe;
-    color:#50b7f5;
+    background-color:#d5d7d8;
+    color:hsl(240, 2%, 11%);
     transition:color 100ms ease-out;
  }
  .SidebarLink>h2{
+   display: flex;
+   justify-content: space-between;
     font-weight:700;
     font-size: 20px;
     margin-right:20px;
  }
+ .icon{
+  display: flex;
+  gap:1rem;
+  justify-content: center;
+ }
 
+ 

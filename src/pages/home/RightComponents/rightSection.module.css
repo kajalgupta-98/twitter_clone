@@ -1,0 +1,46 @@
+
+.followbox {
+    box-shadow: 0 0 6px hsl(210, 14%, 90%);
+    align-items: flex-start;
+    border-radius: 2%;
+    text-align: left;
+    padding-left: 2rem;
+    width: 30vh;
+    padding-right: 2rem;
+    background-color: rgb(236, 235, 235);
+}
+
+.follow {
+    display: flex;
+    justify-content: space-around;
+}
+
+.RightSection {
+margin:1rem;
+}
+
+h4,p {
+    margin: 0em;
+}
+
+.trend{
+margin-top: 1rem;
+scroll-behavior: smooth;
+}
+h6{
+    margin: 0%;
+}
+.followBtn{
+    border-radius: 15rem;
+    color: aliceblue;
+    background-color: rgb(0, 12, 15);
+    border: none;
+}
+
+.follow{
+    margin-top: 1rem;
+}
+h5{
+    color: rgb(1, 169, 236);
+    padding-bottom: 1rem;;
+}
