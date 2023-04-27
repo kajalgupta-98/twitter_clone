@@ -15,13 +15,14 @@
 nav a{
     text-decoration: none;
 }
+
 .dobContainer{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 0px;
 }
-span{
+.userContactChoice{
     display: flex;
     justify-content: flex-end;
     color: blue;
