@@ -1,13 +1,12 @@
 import React from 'react'
 import {InputLabel, Select, MenuItem, FormControl} from "@mui/material"
-import style from './select.module.css'
 
 
 function SelectComponent({label, Menuoptions,value, onchange}) {
     
     
   return (
-    <div className={style.selectContainer}>
+    <div >
      <FormControl sx={{ m: 1, minWidth: 90 }}>
       <InputLabel id="demo-simple-select-label">{label}</InputLabel>
       <Select
