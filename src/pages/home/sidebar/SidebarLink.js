@@ -6,8 +6,8 @@ import React from 'react'
 export default function SidebarLink({text,Icon}) {
   return (
     <div className={style.SidebarLink}>
-      <Icon/>
-        <h2>{text}</h2>
+     
+        <h2><div className={style.icon}><Icon/>{text}</div></h2>
       
     </div>
   )

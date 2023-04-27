@@ -9,17 +9,22 @@ import BookmarkIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import ListIcon from '@mui/icons-material/ListAlt';
 import PersonIcon from '@mui/icons-material/PersonOutlineOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
+import { Button } from '@mui/material';
+
 const Sidebar = () => {
   return (
     <div className={style.sidebar} >
-        <SidebarLink text ="Home" Icon={HomeIcon}/>
+        <SidebarLink text ="Home" Icon={HomeIcon} />
         <SidebarLink text ="Explore"Icon={SearchIcon}/>
         <SidebarLink text ="Notification"Icon={NotificationIcon}/>
         <SidebarLink text ="Messages" Icon={MessageIcon}/>
         <SidebarLink text ="Bookmarks"Icon={BookmarkIcon}/>
-        <SidebarLink text ="Lists"Icon={ListIcon}/>
+        <SidebarLink text ="Twitter Blue"Icon={ListIcon}/>
         <SidebarLink text ="Profile"Icon={PersonIcon}/>
         <SidebarLink text ="More"Icon={MoreHorizOutlinedIcon}/>
+        <Button id ={style.tweet}>
+          Tweet
+        </Button>
 
       
     </div>
