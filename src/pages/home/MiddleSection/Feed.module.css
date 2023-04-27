@@ -1,0 +1,19 @@
+.feed{
+    border:1px solid rgb(231, 228, 228);
+    width:42rem;
+    height: 9rem;
+}
+.home{
+    margin: 2rem 36rem 2rem 0rem;
+    padding: 0rem 2rem 0rem 0rem;
+}
+.for{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.main{
+    border:1px solid rgb(231, 228, 228);
+    display: flex;
+    align-items: flex-start;
+}
