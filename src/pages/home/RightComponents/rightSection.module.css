@@ -1,46 +1,98 @@
-
+.trendbox,
 .followbox {
-    box-shadow: 0 0 6px hsl(210, 14%, 90%);
-    align-items: flex-start;
+    box-shadow: 0 0 6px hsl(204, 5%, 80%);
+    align-items: center;
     border-radius: 2%;
     text-align: left;
-    padding-left: 2rem;
-    width: 30vh;
-    padding-right: 2rem;
-    background-color: rgb(236, 235, 235);
+    width: 40vh;
+    justify-content: center;
+    background-color: rgb(237, 242, 247);
 }
 
 .follow {
     display: flex;
     justify-content: space-around;
+    cursor: pointer;
+}
+
+
+input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.searchBar {
+    background-color: rgb(237, 242, 247);
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    padding-left: 2rem;
+    border-radius: 50px;
+    position: fixed;
+    width: 35vh;
+}
+
+i {
+    padding: 1rem;
+}
+
+
+h4,
+p {
+    margin: 0em;
+    cursor: pointer;
+}
+
+.trend:hover {
+    background-color: rgb(209, 228, 247);
+    transition: color 100ms ease-out;
+}
+
+.follow:hover {
+    background-color: rgb(211, 230, 245);
+    transition: color 100ms ease-out;
+}
+
+.trend {
+    margin-top: 1rem;
+    padding-left: 2rem;
+
+}
+
+h2,
+h5 {
+    margin-left: 2rem;
+}
+
+h6 {
+    margin: 0%;
+}
+
+.follow {
+    margin-top: 1rem;
+}
+
+h5 {
+    color: rgb(1, 169, 236);
+    padding-bottom: 1rem;
+    cursor: pointer;
+
 }
 
 .RightSection {
-margin:1rem;
-}
-
-h4,p {
-    margin: 0em;
-}
-
-.trend{
-margin-top: 1rem;
-scroll-behavior: smooth;
-}
-h6{
-    margin: 0%;
-}
-.followBtn{
-    border-radius: 15rem;
-    color: aliceblue;
-    background-color: rgb(0, 12, 15);
-    border: none;
-}
-
-.follow{
     margin-top: 1rem;
 }
-h5{
-    color: rgb(1, 169, 236);
-    padding-bottom: 1rem;;
+
+.trendbox {
+    margin-top: 5rem;
+
+}
+
+.profile {
+    display: flex;
+    gap: 2em;
+
 }
