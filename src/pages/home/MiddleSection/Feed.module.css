@@ -1,7 +1,7 @@
 .feed{
     border:1px solid rgb(231, 228, 228);
     width:42rem;
-    height: 9rem;
+    height: 6rem;
 }
 .home{
     margin: 2rem 36rem 2rem 0rem;
@@ -11,9 +11,38 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 0.5rem;
+    margin-top: -3rem;
+
 }
+
 .main{
     border:1px solid rgb(231, 228, 228);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    gap:1rem;
+}
+
+.tweetIcon{
+    display:flex;
+    margin-left: -10rem;
+    margin-top: 4rem;
+    gap: 24rem;
+}
+.h3{
+    padding-left:1rem;
+    padding-top: 1rem
+}
+#tweet{
+    
+    width:4rem;
+    background-color: hsl(203,89%,64%);
+    border-radius: 2rem;
+    color:white;
+    font-weight:700;
+    text-transform: inherit;
+    margin-bottom: 1rem;
+}
+p{
+    color: hsl(203,89%,64%);
 }
