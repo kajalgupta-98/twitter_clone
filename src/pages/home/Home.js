@@ -12,7 +12,9 @@ const Home = () => {
      
 
       <Sidebar/>
+      <div>
       <Feed/>
+      </div>
       <div className={style.right}>
         <RightPart1/>
       </div>
