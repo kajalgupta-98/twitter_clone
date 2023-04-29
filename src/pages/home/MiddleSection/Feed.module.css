@@ -1,19 +1,79 @@
-.feed{
-    border:1px solid rgb(231, 228, 228);
-    width:42rem;
-    height: 9rem;
-}
+
 .home{
-    margin: 2rem 36rem 2rem 0rem;
-    padding: 0rem 2rem 0rem 0rem;
+
+    border:1px solid rgb(236, 235, 235);
+   
+
+    
+}
+.home>h2{
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    margin-right: 34rem;
 }
 .for{
-    display: flex;
+     display: flex; 
     flex-direction: row;
     justify-content: space-around;
+    padding: 0rem;
+   
+    width:100%;
+    margin-top: -7rem;
+    margin-bottom: 0rem;
+
 }
+.for>div:hover{
+    /* background-color: rgb(243, 243, 243); */
+    height:-2rem;
+    border-bottom:0.5em solid  hsl(203,89%,64%); /* here configure as your needs */
+    /* color:#00c; */
+}
+
+.for>div{
+    padding:3rem 7rem 3rem 2rem;
+}
+
+
 .main{
     border:1px solid rgb(231, 228, 228);
-    display: flex;
-    align-items: flex-start;
+    /* display: flex; */
+    align-items: center;
+    gap:1rem;
+    height: 20vh;
+}
+
+.tweetIcon{
+    display:flex;
+    margin-left: 3rem;
+    margin-top: 0rem;
+    gap: 24rem;
+    padding-top: 2rem;
+}
+.h3{
+    padding-left:1rem;
+    padding-top: 1rem
+}
+#tweet{
+    
+    width:4rem;
+    background-color: hsl(203,89%,64%);
+    border-radius: 2rem;
+    color:white;
+    font-weight:700;
+    text-transform: inherit;
+    margin-bottom: 1rem;
+}
+p{
+    color: hsl(203,89%,64%);
+}
+.happen{
+  display: flex;
+}
+.data{
+    border:1px solid rgb(212, 210, 210);
+}
+.header{
+    position:fixed;
+    border:1px solid;
+
 }
