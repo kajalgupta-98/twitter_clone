@@ -1,10 +1,10 @@
 .home{
 text-align: center;
 display: flex;
-flex-direction: row;
+/* flex-direction: row; */
 /* align-items: flex-start; */
-justify-content: flex-start;
-width:33%;
+/* justify-content: flex-start; */
+width:100%;
 }
 .right{
     display: flex;
