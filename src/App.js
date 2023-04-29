@@ -7,7 +7,9 @@ import Navbar from "./components/navbar/Navbar"
 import { useRecoilValue } from 'recoil';
 import userLoggedInStatus from './userLoggedInStatus';
 function App() {
+
   const isUserLoggedIn = useRecoilValue(userLoggedInStatus)
+
   return (
   
    <div className ='App'>
@@ -16,8 +18,12 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
      </Routes>
+
+ 
+
      {isUserLoggedIn? <></> :  <Navbar/>}
    
+
      </div>
     
 
