@@ -12,7 +12,7 @@
 .navText{
     color: white;
     background-color: transparent;
-
+    padding: 1rem;
 }
 .BtnContainer{
     display: flex;
@@ -30,6 +30,13 @@
     color: white;
     cursor: pointer;
 }
+.loginBtn:hover{
+    opacity: 0.7;
+}
+.loginBtn a{
+    color:white;
+    text-decoration: none;
+}
 .signupBtn{
     width: 5.5em;
     height: 2.3rem;
@@ -39,4 +46,11 @@
     color: black;
     cursor: pointer;
 
+}
+.signupBtn:hover{
+    opacity: 0.7;
+}
+.signupBtn a{
+    text-decoration: none;
+    color: black;
 }
