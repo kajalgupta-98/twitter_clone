@@ -1,32 +1,38 @@
 .regFormContainer{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
-    width: 40%;
-    height: 80%;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 2rem;
-    margin: 1rem;
-    padding-top: 1rem;
+    align-items: center;
+    justify-content: center;
+   
 }
-
+.heading{
+    margin-top: 0px;
+    color: black;
+}
 nav a{
     text-decoration: none;
 }
-
+.dobHeading{
+    margin-top: 1rem;
+    width: 85%;
+}
+.dobInfo{
+    width: 85%;
+}
 .dobContainer{
+    width: 85%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 0px;
 }
 .userContactChoice{
+    width: 85%;
     display: flex;
     justify-content: flex-end;
     color: blue;
     cursor: pointer;
+    margin-bottom: 0.5rem;
 }
 .error{
     color: red;
