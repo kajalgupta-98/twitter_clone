@@ -1,8 +1,10 @@
+
 import React from "react";
 import Tweet from "./TweetBox";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { tweetAtom } from "../../../Recoil/tweets";
 import HomeNav from "../../../components/homenav/HomeNav";
+import Happen from "../../../components/happen/Happen";
 
 export default function Feed() {
   const tweets = useRecoilValue(tweetAtom);
@@ -22,7 +24,7 @@ export default function Feed() {
     <div>
       
      <HomeNav/>
-        
+     <Happen />
 
         <div>
           {tweets.map((tweet, index) => (
@@ -36,5 +38,9 @@ export default function Feed() {
       </div>
       
     </>
-  );
-}
+  )};
+
+
+      
+      
+

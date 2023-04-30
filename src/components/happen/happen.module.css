@@ -1,0 +1,36 @@
+.happen{
+    display: flex;
+    padding: 1rem;
+  }
+  .data{
+      border:1px solid rgb(212, 210, 210);
+      margin-top: 8rem;
+      height: auto;
+  }
+
+.tweetIcon{
+    display:flex;
+    margin-left: 3rem;
+    margin-top: 0rem;
+    gap: 24rem;
+    padding-top: 2rem;
+}
+.textArea{
+    border: none;
+    outline: none;
+    border: 0px solid transparent;
+    font-size: 1.2rem;
+    margin: 1rem;
+    width: 100%;
+    height: auto;
+}
+#tweet{
+    
+    width:6rem;
+    background-color: #00acee;
+    border-radius: 2rem;
+    color:white;
+    font-weight:700;
+    text-transform: inherit;
+    margin-bottom: 1rem;
+}

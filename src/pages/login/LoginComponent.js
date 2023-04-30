@@ -6,13 +6,14 @@ import { FcGoogle } from "react-icons/fc"
 import { AiFillApple, AiOutlineTwitter } from "react-icons/ai"
 import {ImCross} from "react-icons/im"
 import { useSetRecoilState } from 'recoil'
-import userLoggedInStatus from '../../userLoggedInStatus'
+import userLoggedInStatus, { currentUserAtom } from '../../userLoggedInStatus'
 import SimpleSnackbar from '../../components/Snackbar'
 
 
 const LoginComponent = ({onClose, onOpen}) => {
 
   const setIsUserLoggedIn = useSetRecoilState(userLoggedInStatus)
+  const setCurrentUser = useSetRecoilState(currentUserAtom)
 
   const [contact, setContact] = useState("")
   const [password, setPassword]= useState("")
@@ -39,7 +40,7 @@ const LoginComponent = ({onClose, onOpen}) => {
   function handleLoginSubmit(e){
     e.preventDefault()
     let users = JSON.parse(localStorage.getItem("userDetails"))
-    const isUserExists = users.some((user)=> (user.Email===contact ||user.Phone===contact) && user.Password===password )
+    const isUserExists = users.find((user)=> (user.Email===contact ||user.Phone===contact) && user.Password===password )
     console.log(users)
     console.log(isUserExists)
 
@@ -47,6 +48,10 @@ const LoginComponent = ({onClose, onOpen}) => {
       window.alert("login Success")
       setOpen(true);
       setIsUserLoggedIn(true)
+      setCurrentUser({
+        name: isUserExists.Name,
+        email: isUserExists.Email
+      })
       navigate("/")
     }
 

@@ -9,42 +9,60 @@ import BookmarkIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import ListIcon from '@mui/icons-material/ListAlt';
 import PersonIcon from '@mui/icons-material/PersonOutlineOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
-import { Button } from '@mui/material';
-import {Popover, Typography} from '@mui/material';
-import {FaRegCommentDots,FaListAlt} from "react-icons/fa"
-import {BsPersonHeart} from "react-icons/bs"
-import {MdVerified} from "react-icons/md"
-import {AiOutlineDown} from "react-icons/ai"
+import { Button, Dialog, DialogContent, DialogContentText } from '@mui/material';
+import { Popover, Typography } from '@mui/material';
+import { FaRegCommentDots, FaListAlt } from "react-icons/fa"
+import { BsPersonHeart } from "react-icons/bs"
+import { MdVerified } from "react-icons/md"
+import { AiOutlineDown, AiOutlineTwitter } from "react-icons/ai"
+import CurrentUser from '../../../components/currentUser/CurrentUser';
+import { useRecoilValue } from 'recoil';
+import userLoggedInStatus from '../../../userLoggedInStatus';
+import Happen from '../../../components/happen/Happen';
 
 
 
 const Sidebar = () => {
-  const [openMore, setOpenMore] =React.useState(false)  
+  const [openMore, setOpenMore] = React.useState(false)
+  const [openHappen, setOpenHappen] = React.useState(false)
+  const isUserLoggedIn = useRecoilValue(userLoggedInStatus)
 
 
-  function handleOpenMore(){
+  function handleOpenMore() {
     setOpenMore(true)
   }
 
-  function handleCloseMore(){
+  function handleCloseMore() {
     setOpenMore(false)
   }
- 
-   
+
+  function handleOpenHappen() {
+    setOpenHappen(true)
+  }
+
+  function handleCloseHappen() {
+    setOpenHappen(false)
+  }
+
+
   return (
-    <div className={style.sidebar} >
-      
-        <SidebarLink text ="Home" Icon={HomeIcon} />
-        <SidebarLink text ="Explore"Icon={SearchIcon}/>
-        <SidebarLink text ="Notification"Icon={NotificationIcon}/>
-        <SidebarLink text ="Messages" Icon={MessageIcon}/>
-        <SidebarLink text ="Bookmarks"Icon={BookmarkIcon}/>
-        <SidebarLink text ="Twitter Blue"Icon={ListIcon}/>
-        <SidebarLink text ="Profile"Icon={PersonIcon}/>
+
+    <div className={style.sidebarContainer}>
+
+      <div className={style.sidebar} >
+        <div className={style.sidebarTwitterIcon}><AiOutlineTwitter size={30} color="#00acee " /></div>
+        <SidebarLink text="Home" Icon={HomeIcon} />
+        <SidebarLink text="Explore" Icon={SearchIcon} />
+        <SidebarLink text="Notification" Icon={NotificationIcon} />
+        <SidebarLink text="Messages" Icon={MessageIcon} />
+        <SidebarLink text="Bookmarks" Icon={BookmarkIcon} />
+        <SidebarLink text="Twitter Blue" Icon={ListIcon} />
+        <SidebarLink text="Profile" Icon={PersonIcon} />
+
         <div className={style.morePopup}>
-          <SidebarLink text ="More"Icon={MoreHorizOutlinedIcon} onClick={handleOpenMore} />
+          <SidebarLink text="More" Icon={MoreHorizOutlinedIcon} onClick={handleOpenMore} />
           <Popover
-            sx={{borderRadius:"10px"}}
+            sx={{ borderRadius: "10px" }}
             open={openMore}
             // anchorEl={anchorEl}
             onClose={handleCloseMore}
@@ -58,60 +76,72 @@ const Sidebar = () => {
               vertical: 'top',
               horizontal: 'left',
             }}>
-            <Typography sx={{display:"flex", flexDirection:"column", color:"black", width:"20rem", fontFamily:"chirp", borderRadius:"10px"}}>
-             <div className={style.moreOptions}>
-              <FaRegCommentDots/> 
-              <p>Topics</p>
-             </div >
-             <div  className={style.moreOptions}>
-              <FaListAlt/> 
-              <p>List</p>
-             </div>
-             <div  className={style.moreOptions}>
-              <BsPersonHeart/> 
-              <p>Twitter Circle</p>
-             </div>
-             <div  className={style.moreOptions}>
-              <MdVerified/> 
-              <p>Verified Orgs</p>
-             </div>
-            
-             <div className={style.moreDropDown}> 
+            <Typography sx={{ display: "flex", flexDirection: "column", color: "black", width: "20rem", fontFamily: "chirp", borderRadius: "10px" }}>
+              <div className={style.moreOptions}>
+                <FaRegCommentDots />
+                <p>Topics</p>
+              </div >
+              <div className={style.moreOptions}>
+                <FaListAlt />
+                <p>List</p>
+              </div>
+              <div className={style.moreOptions}>
+                <BsPersonHeart />
+                <p>Twitter Circle</p>
+              </div>
+              <div className={style.moreOptions}>
+                <MdVerified />
+                <p>Verified Orgs</p>
+              </div>
+
+              <div className={style.moreDropDown}>
                 <p className={style.moreDropDownText}>
                   Creater Studio
-                </p> 
-                <p  className={style.moreDropDownArrow}  >
-                  <AiOutlineDown/>
-                </p> 
-              </div>
-             <div className={style.moreDropDown}> 
-                <p className={style.moreDropDownText}>
-                  Professional Tools
-                </p> 
-                <p className={style.moreDropDownArrow}>
-                <AiOutlineDown/>
+                </p>
+                <p className={style.moreDropDownArrow}  >
+                  <AiOutlineDown />
                 </p>
               </div>
-              <div className={style.moreDropDown}> 
+              <div className={style.moreDropDown}>
+                <p className={style.moreDropDownText}>
+                  Professional Tools
+                </p>
+                <p className={style.moreDropDownArrow}>
+                  <AiOutlineDown />
+                </p>
+              </div>
+              <div className={style.moreDropDown}>
                 <p className={style.moreDropDownText}>
                   Settings and Support
-                </p> 
+                </p>
                 <p className={style.moreDropDownArrow}>
-                <AiOutlineDown/>
+                  <AiOutlineDown />
                 </p>
               </div>
 
             </Typography>
           </Popover>
         </div>
-       
-        
-        
-        <Button id ={style.tweet}>
-          Tweet
-        </Button>
 
-      
+
+        <div>
+          <Button id={style.tweet} onClick={handleOpenHappen}>
+            Tweet
+          </Button>
+          <Dialog open={openHappen} onClose={handleCloseHappen} >
+            <DialogContent sx={{border:"none"}}>
+              <DialogContentText sx={{border:"none"}}>
+                <Happen />
+              </DialogContentText>
+            </DialogContent>
+          </Dialog>
+        </div>
+
+
+
+      </div>
+      {isUserLoggedIn ? <CurrentUser /> : null}
+
     </div>
   )
 }
