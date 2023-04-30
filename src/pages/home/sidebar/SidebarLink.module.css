@@ -1,6 +1,6 @@
 .SidebarLink{
         display:flex;
-        padding-left: 1.5rem;
+        /* padding-left: 1rem; */
         align-items:cover;
         cursor:pointer;
         border-radius: 30px;
