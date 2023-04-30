@@ -1,32 +1,35 @@
-import './App.css';
-import {Routes, Route} from "react-router-dom"
-import Home from './pages/home/Home';
-import Login from './pages/login/Login';
-import Register from './pages/register/Register';
-import Navbar from "./components/navbar/Navbar"
-import { useRecoilValue } from 'recoil';
-import userLoggedInStatus from './userLoggedInStatus';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import Navbar from "./components/navbar/Navbar";
+import { useRecoilValue } from "recoil";
+import userLoggedInStatus from "./userLoggedInStatus";
+import { fetchTweets } from "./services/tweets";
+import { useEffect } from "react";
+import { useSetRecoilState } from 'recoil'
+import {tweetAtom} from './Recoil/tweets'
 function App() {
-
-  const isUserLoggedIn = useRecoilValue(userLoggedInStatus)
+  const setTweets =useSetRecoilState(tweetAtom)
+  useEffect(() => {
+    fetchTweets().then((tweets) => {
+      setTweets(tweets);
+    
+    });
+  }, []);
+  const isUserLoggedIn = useRecoilValue(userLoggedInStatus);
 
   return (
-  
-   <div className ='App'>
-     <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-     </Routes>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
 
- 
-
-     {isUserLoggedIn? <></> :  <Navbar/>}
-   
-
-     </div>
-    
-
+      {isUserLoggedIn ? <></> : <Navbar />}
+    </div>
   );
 }
 

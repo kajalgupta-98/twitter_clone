@@ -1,39 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './rightSection.module.css'
-
+import Button from '@mui/material/Button'
+import trend from '../../../trendingData.json'
 
 function RightPart2() {
+
+const[trending,setTrending]=useState(5)
+
+
+const handleShowMore = () => {
+    setTrending(trending + 3);
+};
+
+
     return (
         <div className={style.trendbox}>
 
             <h2>What's trending</h2>
 
-
-            <div className={style.trend} >
-
-                <p>Trending in World</p>
-                <h4>#trending</h4>
-                <p>4,500Tweets</p>
-            </div>
-            <div className={style.trend} >
-                <p>Trending in World</p>
-                <h4>#trending</h4>
-                <p>4,500Tweets</p>
-            </div>
-            <div className={style.trend} >
-                <p>Trending in World</p>
-                <h4>#trending</h4>
-                <p>4,500Tweets</p>
-            </div>
-            <div className={style.trend} >
-                <p>Trending in World</p>
-                <h4>#trending</h4>
-                <p>4,500Tweets</p>
-
-
+            {trend.slice(0,trending).map((trend)=>
+            (
+                <div className={style.trend} >
+                <p>famous in{trend.famousIn}</p>
+                <h4>#{trend.hashtags}</h4>
+                <p>{trend.tweets}tweets</p>
             </div>
 
-            <h5>show more</h5>
+
+            ))}
+
+            <Button onClick={handleShowMore} size='small' sx={{ borderRadius: 50, backgroundColor: "transparent", textTransform: "none" }} >Show more</Button>
 
 
 

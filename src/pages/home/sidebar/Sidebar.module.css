@@ -19,18 +19,29 @@
     transition:color 100ms ease-out;
 }
 .sidebar{
-    width:15rem;
+     /* width:250px;
+    min-width:250px; */
+    
+    min-width: 19vw;
+    padding:0rem;
+    margin:0 0rem 0 0rem;
+    box-shadow: 0 0 6px hsl(210, 14%, 90%); 
+    
+   
+
+    /* width:15rem;
     min-width:15rem;
-    padding:20px 20px;
+    padding:20px 20px; */
     /* margin: 0.5rem auto 0 auto; */
     /* box-shadow: 0 0 6px hsl(210, 14%, 90%);  */
+
 }
-.sidebar > .MuiSvgIcon-root{
+/* .sidebar > .MuiSvgIcon-root{
     padding: 20px;
-}
+} */
 #tweet{
     width:100%;
-    width:16rem;
+    width:12rem;
     background-color: hsl(203,89%,64%);
     border-radius: 20px;
     color:white;
@@ -86,4 +97,8 @@
      justify-content:flex-end;
       width:20%;
        padding-right:1rem
+}
+.bird{
+    margin-right:7rem;
+    color:hsl(203,89%,64%);
 }

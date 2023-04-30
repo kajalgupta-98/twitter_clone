@@ -2,6 +2,8 @@
 .home{
 
     border:1px solid rgb(236, 235, 235);
+    width:5ovw;
+    
    
 
     
@@ -9,7 +11,8 @@
 .home>h2{
     margin-top: 2rem;
     margin-bottom: 6rem;
-    margin-right: 34rem;
+    margin-right: 38rem;
+    margin-left:0rem
 }
 .for{
      display: flex; 
@@ -44,9 +47,9 @@
 
 .tweetIcon{
     display:flex;
-    margin-left: 3rem;
+    margin-left: 0rem;
     margin-top: 0rem;
-    gap: 24rem;
+    gap: 30rem;
     padding-top: 2rem;
 }
 .h3{
@@ -61,10 +64,12 @@
     color:white;
     font-weight:700;
     text-transform: inherit;
-    margin-bottom: 1rem;
+    margin-bottom:  1rem ;
+    margin-left:1rem;
 }
-p{
+.tweetIcon>p{
     color: hsl(203,89%,64%);
+    margin-left:2rem;
 }
 .happen{
   display: flex;

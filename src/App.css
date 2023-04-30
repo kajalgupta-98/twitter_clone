@@ -6,6 +6,9 @@
   font-family: chirp;
   
 }
+body{
+  overflow-x: hidden;
+}
 
 
 

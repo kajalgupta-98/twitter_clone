@@ -21,6 +21,7 @@ import userLoggedInStatus from '../../../userLoggedInStatus';
 import Happen from '../../../components/happen/Happen';
 
 
+
 const Sidebar = () => {
   const [openMore, setOpenMore] = React.useState(false)
   const [openHappen, setOpenHappen] = React.useState(false)
@@ -45,6 +46,7 @@ const Sidebar = () => {
 
 
   return (
+
     <div className={style.sidebarContainer}>
 
       <div className={style.sidebar} >
@@ -56,6 +58,7 @@ const Sidebar = () => {
         <SidebarLink text="Bookmarks" Icon={BookmarkIcon} />
         <SidebarLink text="Twitter Blue" Icon={ListIcon} />
         <SidebarLink text="Profile" Icon={PersonIcon} />
+
         <div className={style.morePopup}>
           <SidebarLink text="More" Icon={MoreHorizOutlinedIcon} onClick={handleOpenMore} />
           <Popover
