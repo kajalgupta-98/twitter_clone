@@ -5,6 +5,7 @@
     border-radius: 2%;
     text-align: left;
     width: 40vh;
+    margin-bottom: 1rem;
     justify-content: center;
     background-color: rgb(237, 242, 247);
 }
@@ -25,6 +26,7 @@ input {
 }
 
 .searchBar {
+    box-shadow: 0 0 6px hsl(204, 5%, 80%);
     background-color: rgb(237, 242, 247);
     height: 3rem;
     display: flex;
@@ -33,6 +35,7 @@ input {
     border-radius: 50px;
     position: fixed;
     width: 35vh;
+    z-index: 1;
 }
 
 i {
@@ -64,6 +67,7 @@ p {
 
 h2,
 h5 {
+    padding-top: 1rem;
     margin-left: 2rem;
 }
 
@@ -76,8 +80,7 @@ h6 {
 }
 
 h5 {
-    color: rgb(1, 169, 236);
-    padding-bottom: 1rem;
+   
     cursor: pointer;
 
 }
@@ -88,11 +91,5 @@ h5 {
 
 .trendbox {
     margin-top: 5rem;
-
-}
-
-.profile {
-    display: flex;
-    gap: 2em;
-
+  
 }
