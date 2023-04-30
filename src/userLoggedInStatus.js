@@ -5,4 +5,9 @@ const userLoggedInStatus = atom({
     default: false
 })
 
+export const currentUserAtom= atom({
+    key:"currentUser",
+    default: {}
+})
+
 export default userLoggedInStatus
