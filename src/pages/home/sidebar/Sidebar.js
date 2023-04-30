@@ -17,6 +17,7 @@ import {MdVerified} from "react-icons/md"
 import {AiOutlineDown} from "react-icons/ai"
 
 
+
 const Sidebar = () => {
   const [openMore, setOpenMore] =React.useState(false)  
 
@@ -32,6 +33,7 @@ const Sidebar = () => {
    
   return (
     <div className={style.sidebar} >
+      
         <SidebarLink text ="Home" Icon={HomeIcon} />
         <SidebarLink text ="Explore"Icon={SearchIcon}/>
         <SidebarLink text ="Notification"Icon={NotificationIcon}/>

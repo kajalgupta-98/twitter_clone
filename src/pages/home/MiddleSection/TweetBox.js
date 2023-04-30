@@ -1,52 +1,65 @@
-import React from 'react'
-import style from './tweet.module.css'
-import tweet from '../../../tweet.json'
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
-import AspectRatioOutlinedIcon from '@mui/icons-material/AspectRatioOutlined';
-import SignalCellularAltOutlinedIcon from '@mui/icons-material/SignalCellularAltOutlined';
-import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
-import {GoVerified} from 'react-icons/go'
-import {FcLike} from 'react-icons/fc'
-import {AiOutlineHeart} from 'react-icons/ai'
+import React from "react";
+import style from "./tweet.module.css";
 
-import Avatar from '@mui/material/Avatar';
-export default function Tweet() {
-  // const images = new Array(5).fill(0).map((x, index) => {
-  //   return `https://picsum.photos/1000/500?q=${index}`;
-  // })
- 
+import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
+import { GoVerified } from "react-icons/go";
+
+import { AiOutlineHeart, AiFillHeart, AiOutlineRetweet } from "react-icons/ai";
+
+import Avatar from "@mui/material/Avatar";
+
+import { FaComment } from "react-icons/fa";
+export default function Tweet(props) {
+  const tweet = props.tweet;
+
   return (
-    <div className={style.tweet}>
-     {tweet && tweet.map(record=>{
-  return(
     <>
-   <div className={style.image}>
-   <div className={style.avatar}> <Avatar alt="Cindy Baker" src='../Images/3.jpg' /><span>Marry<GoVerified color='blue'/></span></div>
-    <div className={style.box}>
-     
-    <div>{record.content}</div>
-     <img src={record.image} alt="data" height='200' width='500'border-radius="20"/>
-     <div className={style.icon}>
-      <ModeCommentOutlinedIcon/>{record.commentCount}
-      <AspectRatioOutlinedIcon/>
-      <FcLike/>{record.likeCount}
-      {/* {record.isLiked?( <FcLike/>):(<AiOutlineHeart/>)} */}
-     
+      <div className={style.image}>
+        <div className={style.avatar}>
+          <Avatar alt="Cindy Baker" src="../Images/3.jpg" />
+          <span>
+            {tweet.tweetedBy.name}
+            <GoVerified color="blue" />
+          </span>
+        </div>
+        <div className={style.box}>
+          <div className={style.tweet}>
+            <p>{tweet.content}</p>
 
-      <SignalCellularAltOutlinedIcon/>
-      <IosShareOutlinedIcon/>
-      
+            <img
+              onDoubleClick={props.onToggleLike}
+              className="img img-fluid-hand"
+              src={tweet.image}
+              height="250"
+              width="500"
+              border-radius="2"
+            />
+          </div>
+          <div className={style.icon}>
+            <div className="col hand">
+              <FaComment size={25} />
+              {tweet.commentCount}
+            </div>
+            <div className="col hand">
+              <span onClick={props.onToggleLike}>
+                {tweet.isLiked ? (
+                  <AiFillHeart size={25} color="red" />
+                ) : (
+                  <AiOutlineHeart size={25}/>
+                )}
+              </span>
+              {tweet.likeCount}
+            </div>
+            <div className="col hand">
+              <AiOutlineRetweet size={25} />
+              {tweet.reTweetsCount}
+            </div>
+            <div className="col hand">
+              <IosShareOutlinedIcon />
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-    {/* <h3>{record.likeCount}</h3> */}
-    </div>
     </>
-  )
-})}
-      
-    </div>
-  )
+  );
 }
-
-
