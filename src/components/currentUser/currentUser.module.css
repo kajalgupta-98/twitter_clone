@@ -1,0 +1,26 @@
+.currentUser{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around ;
+    margin:1rem; 
+    padding:1rem; 
+    border-radius: 3rem;
+    cursor: pointer;
+}
+.currentUser:hover{
+    background-color:#d5d7d8;
+    color:hsl(240, 2%, 11%);
+    transition:color 100ms ease-out;
+}
+
+.currentUserPopOver h4{
+    padding: 1rem;
+    width: 100%;
+
+}
+.currentUserPopOver h4:hover{
+    background-color:#d5d7d8;
+    color:hsl(240, 2%, 11%);
+    transition:color 100ms ease-out;
+}
