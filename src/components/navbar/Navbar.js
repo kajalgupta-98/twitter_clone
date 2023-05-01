@@ -25,7 +25,7 @@ const Navbar = ({onSignUpClick,onLoginClick}) => {
   const handleSignUpOpen=()=>{
     setSignUpOpen(true)
   }
-  const handlesignUpClose =()=>{
+  const handleSignUpClose =()=>{
     setSignUpOpen(false)
   }
   return (
@@ -45,7 +45,7 @@ const Navbar = ({onSignUpClick,onLoginClick}) => {
           <Dialog open={loginOpen} onClose={handleLoginClose}>
             <DialogContent  sx={{width:"30rem", borderRadius:"5rem"}}>
               <DialogContentText sx={{color:"black"}}>
-                  <LoginComponent onClose={handleLoginClose} onOpen={handleSignUpOpen}/>
+                  <LoginComponent onLoginClose={handleLoginClose} onSignUpOpen={handleSignUpOpen}/>
               </DialogContentText>
             </DialogContent>
           </Dialog>
@@ -57,10 +57,10 @@ const Navbar = ({onSignUpClick,onLoginClick}) => {
               <strong>Sign up</strong>
             </Link>
           </button>
-          <Dialog open={signUpOpen} onClose={handlesignUpClose}>
+          <Dialog open={signUpOpen} onClose={handleSignUpClose}>
             <DialogContent  sx={{width:"30rem", borderRadius:"5rem"}}>
               <DialogContentText sx={{color:"black"}}>
-                  <RegisterComponent onClose={handlesignUpClose} onOpen={handleLoginOpen}/>
+                  <RegisterComponent onSignUpClose={handleSignUpClose} onLoginOpen={handleLoginOpen}/>
               </DialogContentText>
             </DialogContent>
           </Dialog>
