@@ -10,12 +10,14 @@ const Home = () => {
   return (
     <div className={style.home}>
      
-
-      <Sidebar/>
-
+<div className={style.Sidebar}>
+<Sidebar/>
+</div>
      
-      <Feed/>
 
+     <div className={style.feed}> 
+      <Feed/>
+      </div>
       <div className={style.right}>
         <RightPart1/>
       </div>

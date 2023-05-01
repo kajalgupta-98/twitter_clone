@@ -4,11 +4,12 @@
         align-items:cover;
         cursor:pointer;
         border-radius: 30px;
+        
     }
  .SidebarLink:hover{
     background-color:#d5d7d8;
     color:hsl(240, 2%, 11%);
-    transition:color 100ms ease-out;
+    /* transition:color 100ms ease-out; */
  }
  .SidebarLink>h2{
    display: flex;
