@@ -4,10 +4,10 @@ import { Button } from '@mui/material'
 import {FcGoogle} from "react-icons/fc"
 import {AiFillApple , AiOutlineTwitter} from "react-icons/ai"
 
-const DefaultSignUp = ({onclick, onOpen, onClose}) => {
+const DefaultSignUp = ({onclick, onLoginOpen, onSignUpClose}) => {
   function handlePageChange(){
-    onClose()
-    onOpen()
+    onSignUpClose()
+    onLoginOpen()
   }
   return (
     <>

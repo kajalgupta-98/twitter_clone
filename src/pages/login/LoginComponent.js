@@ -10,7 +10,7 @@ import userLoggedInStatus, { currentUserAtom } from '../../userLoggedInStatus'
 import SimpleSnackbar from '../../components/Snackbar'
 
 
-const LoginComponent = ({onClose, onOpen}) => {
+const LoginComponent = ({onLoginClose, onSignUpOpen}) => {
 
   const setIsUserLoggedIn = useSetRecoilState(userLoggedInStatus)
   const setCurrentUser = useSetRecoilState(currentUserAtom)
@@ -53,6 +53,11 @@ const LoginComponent = ({onClose, onOpen}) => {
         email: isUserExists.Email
       })
       navigate("/")
+      // localStorage.setItem("login Sucsess", true);
+
+    }else{
+      setError(true)
+      setErrorText("Invalid credentials")
     }
 
   }
@@ -64,14 +69,15 @@ const LoginComponent = ({onClose, onOpen}) => {
     setOpen(false);
   };
 function handleChangingPage(){
-  onClose();
-  onOpen()
+  onLoginClose();
+  onSignUpOpen()
 }
   return (
     <>
     <form className={style.loginFormContainer} onSubmit={handleLoginSubmit}>
-      <nav onClick={onClose}> <Link to={'/'}><ImCross color="black"/></Link></nav>
+      <nav onClick={onLoginClose}> <Link to={'/'}><ImCross color="black"/></Link></nav>
       <div><AiOutlineTwitter size={45} color="#00acee " /></div>
+      {error ? <small style={{color:"red"}}>{errorText}</small> : null} <br/>
       {nextClick ? <>
         <h1>Enter your password</h1>
         <TextField disabled
@@ -100,8 +106,8 @@ function handleChangingPage(){
                     color:"black",
                     border:"1px solid grey" }}  variant="outlined"> <AiFillApple size={25} color='black' /> Sign in with Apple</Button>
           <p>or</p>
-          <TextField  sx={{width:"65%"}} id="outlined-basic" label="Phone, email or username" variant="outlined" value={contact} onChange={(e) => setContact(e.target.value)} />
-          {error ? <small style={{color:"red"}}>{errorText}</small> : null} <br/>
+          <TextField  sx={{width:"65%"}} id="outlined-basic" label="Phone, email or username" variant="outlined" value={contact} onChange={(e) => setContact(e.target.value)} /><br/>
+         
           <Button sx={{width:"65%",
                     borderRadius:"2rem",
                     backgroundColor:"black"}} variant="contained" onClick={handleNextClick}>Next</Button><br />
