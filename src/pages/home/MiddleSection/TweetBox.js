@@ -1,10 +1,10 @@
 import React from "react";
 import style from "./tweet.module.css";
+import {FiShare} from 'react-icons/fi'
 
-import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
 import { GoVerified } from "react-icons/go";
-
-import { AiOutlineHeart, AiFillHeart, AiOutlineRetweet } from "react-icons/ai";
+import{TbChartInfographic} from 'react-icons/tb'
+import { AiOutlineHeart, AiFillHeart, AiOutlineRetweet  } from "react-icons/ai";
 
 import Avatar from "@mui/material/Avatar";
 
@@ -36,11 +36,19 @@ export default function Tweet(props) {
             />
           </div>
           <div className={style.icon}>
-            <div className="col hand">
+            <div>
               <FaComment size={25} />
               {tweet.commentCount}
             </div>
-            <div className="col hand">
+            <div >
+              <span className={style.reTweet}>
+            <AiOutlineRetweet size={25}/>
+            </span>
+              {tweet.reTweetsCount}
+
+            </div>
+            <div>
+             
               <span onClick={props.onToggleLike}>
                 {tweet.isLiked ? (
                   <AiFillHeart size={25} color="red" />
@@ -50,12 +58,11 @@ export default function Tweet(props) {
               </span>
               {tweet.likeCount}
             </div>
-            <div className="col hand">
-              <AiOutlineRetweet size={25} />
-              {tweet.reTweetsCount}
+            <div>
+              <TbChartInfographic size={25} />
             </div>
-            <div className="col hand">
-              <IosShareOutlinedIcon />
+            <div >
+              <FiShare size={25} />
             </div>
           </div>
         </div>

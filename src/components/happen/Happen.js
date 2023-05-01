@@ -6,11 +6,9 @@ import GifBoxOutlinedIcon from '@mui/icons-material/GifBoxOutlined';
 import BallotOutlinedIcon from '@mui/icons-material/BallotOutlined';
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
 import AddLocationOutlinedIcon from '@mui/icons-material/AddLocationOutlined';
-
-
 import style from './happen.module.css'
 import { useRecoilState } from 'recoil';
-import tweetDataAtom from '../../tweetData';
+import {tweetDataAtom} from '../../Recoil/tweets';
 
 
 function Happen () {
@@ -29,7 +27,7 @@ function Happen () {
     
        <div className={style.data}>
         <div className={style.happen}>
-          <Avatar src="/broken-image.jpg" />
+          <Avatar src="../Images/3.jpg" />
           <textarea  className={style.textArea} 
                      placeholder="What's happening?"
                      value={newTweet} 

@@ -1,6 +1,9 @@
 .sidebarContainer{
     display: flex;
     flex-direction: column;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
     
 }
 .sidebarTwitterIcon{
