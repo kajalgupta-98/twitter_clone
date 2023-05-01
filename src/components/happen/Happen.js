@@ -16,7 +16,7 @@ import { currentUserAtom } from '../../userLoggedInStatus';
 
 
 
-function Happen ({onclick}) {
+function Happen () {
   
 
  
@@ -41,7 +41,7 @@ function Happen ({onclick}) {
     }
    setTweets([tweet, ...tweets])
     console.log(tweets)
-    onclick()
+   
     setNewTweet("")
 
   }
@@ -53,15 +53,15 @@ function Happen ({onclick}) {
           <Avatar src="../Images/3.jpg" />
           <textarea  className={style.textArea} 
                      placeholder="What's happening?"
-                     
-                     
+                     onChange={(e)=>setNewTweet(e.target.value)}
+                     value={newTweet}
                      />
         </div>
         <div className={style.tweetIcon}>
           <p>
             <MmsOutlinedIcon/><GifBoxOutlinedIcon/><BallotOutlinedIcon/>< EmojiEmotionsOutlinedIcon/>< AddLocationOutlinedIcon/> 
           </p> 
-          <Button  variant="contained" id ={style.tweet} > 
+          <Button disabled={!newTweet} variant="contained" id ={style.tweet} onClick={addNewTweet} > 
             Tweet
           </Button>
         </div> 
