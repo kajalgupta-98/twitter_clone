@@ -8,21 +8,14 @@ import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined
 import AddLocationOutlinedIcon from '@mui/icons-material/AddLocationOutlined';
 import style from './happen.module.css'
 import { useRecoilState } from 'recoil';
-import {tweetDataAtom} from '../../Recoil/tweets';
+
 
 
 function Happen () {
   
-  const [newTweet, setNewTweet] =React.useState("")
-  const[tweets, setTweets] = useRecoilState(tweetDataAtom)
+ 
 
-  function addNewTweet(){
-    const tweet = [newTweet, ...tweets]
-    setTweets(tweet)
-    // console.log(tweet)
-    console.log(tweets)
-    setNewTweet("")
-  }
+ 
   return (
     
        <div className={style.data}>
@@ -30,15 +23,15 @@ function Happen () {
           <Avatar src="../Images/3.jpg" />
           <textarea  className={style.textArea} 
                      placeholder="What's happening?"
-                     value={newTweet} 
-                     onChange={(e)=> setNewTweet(e.target.value)}
+                     
+                     
                      />
         </div>
         <div className={style.tweetIcon}>
           <p>
             <MmsOutlinedIcon/><GifBoxOutlinedIcon/><BallotOutlinedIcon/>< EmojiEmotionsOutlinedIcon/>< AddLocationOutlinedIcon/> 
           </p> 
-          <Button  disabled ={!newTweet} variant="contained" id ={style.tweet} onClick={addNewTweet}> 
+          <Button  variant="contained" id ={style.tweet} > 
             Tweet
           </Button>
         </div> 
