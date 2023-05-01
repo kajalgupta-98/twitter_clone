@@ -8,9 +8,10 @@ import { useState } from 'react'
 
 
 
+
 function RightSection3() {
 
-
+const[isFollowed,setIsFollowed]=useState(false)
     const [usersToShow, setUsersToShow] = useState(5);
 
 
@@ -18,7 +19,9 @@ function RightSection3() {
         setUsersToShow(usersToShow + 5);
     };
 
-   
+   function handleClick(){
+    setIsFollowed(!isFollowed)   //true
+   }
 
 
     return (
@@ -31,16 +34,23 @@ function RightSection3() {
                     <div className={style.follow} >
                         
                         <Avatar alt="Sasha Howard" src="/static/images/avatar/2.jpg" />
-                      
                         <h4>{user.first_Name}{" "}{user.Last_Name}</h4>
-                        <Button  variant="contained" size='small' sx={{ borderRadius: 50, backgroundColor: "black", textTransform: "none",zIndex:0 }}> Follow</Button>
+                        <Button onClick={handleClick}  variant="contained" size='small' sx={{ borderRadius: 50, backgroundColor: "black", textTransform: "none",zIndex:0 }}>  {isFollowed?"Followed":"Follow"}</Button>
                     </div>
                 ))}
 
 
 
+
+
+
+
+
+
+
                 {usersToShow < user.length && (
-                    <Button onClick={handleShowMore} size='small' sx={{ borderRadius: 50, backgroundColor: "transparent", textTransform: "none" }} >Show more</Button>
+                    <Button onClick={handleShowMore} size='small' sx={{ borderRadius: 50, backgroundColor: "transparent", textTransform: "none" }} >
+                   Show more</Button>
                 )}
 
             </div>

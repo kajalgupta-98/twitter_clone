@@ -6,7 +6,6 @@
     text-align: left;
     width: 40vh;
     margin-bottom: 1rem;
-    justify-content: center;
     background-color: rgb(237, 242, 247);
 }
 
@@ -43,7 +42,7 @@ i {
 }
 
 
-h4,
+h3,
 p {
     margin: 0em;
     cursor: pointer;
@@ -62,7 +61,7 @@ p {
 .trend {
     margin-top: 1rem;
     padding-left: 2rem;
-
+    align-items: center;
 }
 
 h2,
@@ -91,5 +90,20 @@ h5 {
 
 .trendbox {
     margin-top: 5rem;
+    padding-right:.2rem;
   
+}
+
+.tags{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.dots button{
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.dots button:hover{
+    color:red;
 }
