@@ -6,7 +6,7 @@ import DefaultSignUp from '../../components/DefaultSignUp'
 import { Link, useNavigate } from "react-router-dom"
 import {ImCross} from "react-icons/im"
 
-const RegisterComponent = ({onClose, onOpen}) => {
+const RegisterComponent = ({onSignUpClose, onLoginOpen}) => {
 
     const [showCreateAccountPage, setShowCreateAccountPage ]= React.useState(false)
 
@@ -23,7 +23,8 @@ const RegisterComponent = ({onClose, onOpen}) => {
 
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     const dates = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
-    const years = [2000, 2001, 2002, 2003, 2004]
+    const currentYear = new Date().getFullYear()
+    const years = Array(100).fill().map((_,i)=>currentYear-i)
 
     function handleShowCreateAccountPage() {
         setShowCreateAccountPage(true)
@@ -113,6 +114,8 @@ const RegisterComponent = ({onClose, onOpen}) => {
 
             localStorage.setItem("userDetails", JSON.stringify(users));
             window.alert("form submitted")
+            onSignUpClose()
+            onLoginOpen()
             navigate("/")
             console.log(users)
             }
@@ -122,7 +125,7 @@ const RegisterComponent = ({onClose, onOpen}) => {
     }
     return (
         <form className={style.regFormContainer} onSubmit={handleSubmit}>
-            <nav onClick={onClose}> <Link to={'/'}><ImCross color="black"/></Link></nav>
+            <nav onClick={onSignUpClose}> <Link to={'/'}><ImCross color="black"/></Link></nav>
             {showCreateAccountPage ?
                 <>
                     <h1 classname={style.heading}>Create Your Account</h1>
@@ -157,7 +160,7 @@ const RegisterComponent = ({onClose, onOpen}) => {
                     backgroundColor:"black",
                     marginTop:"1rem"}}
                      classname={style.submitBtn} variant="contained" type='submit'>Submit</Button>
-                </> : <DefaultSignUp onclick={handleShowCreateAccountPage} onOpen={onOpen} onClose={onClose} />}
+                </> : <DefaultSignUp onclick={handleShowCreateAccountPage} onLoginOpen={onLoginOpen} onSignUpClose={onSignUpClose} />}
 
 
 

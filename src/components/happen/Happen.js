@@ -9,21 +9,34 @@ import AddLocationOutlinedIcon from '@mui/icons-material/AddLocationOutlined';
 
 
 import style from './happen.module.css'
-import { useRecoilState } from 'recoil';
-import tweetDataAtom from '../../tweetData';
+import { useRecoilState,useRecoilValue } from 'recoil';
+import {tweetAtom} from '../../Recoil/tweets';
+import { currentUserAtom } from '../../userLoggedInStatus';
 
 
-function Happen () {
+function Happen ({onclick}) {
   
   const [newTweet, setNewTweet] =React.useState("")
-  const[tweets, setTweets] = useRecoilState(tweetDataAtom)
+  const[tweets, setTweets] = useRecoilState(tweetAtom)
+  const currentUser= useRecoilValue(currentUserAtom)
+
+ 
 
   function addNewTweet(){
-    const tweet = [newTweet, ...tweets]
-    setTweets(tweet)
-    // console.log(tweet)
+    
+    const tweet = {
+      id: Math.random*10,
+      content: newTweet,
+      createdAt: "today",
+      tweetedBy:{
+        name: currentUser.name
+      }
+    }
+   setTweets([tweet, ...tweets])
     console.log(tweets)
+    onclick()
     setNewTweet("")
+
   }
   return (
     
