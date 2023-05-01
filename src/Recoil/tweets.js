@@ -4,3 +4,4 @@ export const tweetAtom =atom({
     key:"tweets",
     default:[]
 })
+
