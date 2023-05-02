@@ -29,7 +29,7 @@
     box-shadow: 0 0 6px hsl(210, 14%, 90%); 
     margin: 0rem 0rem 0rem 0rem;
     height:74vh;
-    
+    padding-left: 1rem;
 }
 .tweet>img{
     margin-top: 2rem;

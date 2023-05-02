@@ -87,7 +87,7 @@ function handleChangingPage(){
           variant="outlined"
           sx={{width:"85%"}} /> <br />
 
-        <TextField  sx={{width:"85%"}} id="outlined-basic" label="Password" variant="outlined" value={password} onChange={(e)=>setPassword(e.target.value)} /><br /><br />
+        <TextField  sx={{width:"85%"}} id="outlined-basic" type="password" label="Password" variant="outlined" value={password} onChange={(e)=>setPassword(e.target.value)} /><br /><br />
         <Button sx={{width:"85%",
                     borderRadius:"2rem",
                     backgroundColor:"black"}} variant="contained" type="submit">Log in</Button><br /><br />
