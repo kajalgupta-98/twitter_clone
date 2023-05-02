@@ -40,7 +40,7 @@ const CurrentUser = () => {
      open={open}
      onClose={handleClose}
      anchorReference="anchorPosition"
-     anchorPosition={{ top: 350, left: 30 }}
+     anchorPosition={{ top: 380, left: 30 }}
      anchorOrigin={{
        vertical: 'top',
        horizontal: 'left',

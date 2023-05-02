@@ -130,7 +130,7 @@ const Sidebar = () => {
           </Button>
           <Dialog open={openHappen} onClose={handleCloseHappen} >
             <DialogContent sx={{border:"none"}}>
-              <DialogContentText sx={{border:"none"}}>
+              <DialogContentText sx={{border:"none", outline:"none"}}>
                 <Happen/>
               </DialogContentText>
             </DialogContent>

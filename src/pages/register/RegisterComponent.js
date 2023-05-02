@@ -142,7 +142,7 @@ const RegisterComponent = ({onSignUpClose, onLoginOpen}) => {
                             {errors.phone && <span className={style.error}>{errors.phone}</span>}
 
 
-                    <TextField  sx={{width:"85%"}} id="outlined-basic" label="Password" variant="outlined" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <TextField  sx={{width:"85%"}} id="outlined-basic" label="Password"  variant="outlined" value={password} onChange={(e) => setPassword(e.target.value)} />
                     {errors.password && <span className={style.error}>{errors.password}</span>}
 
 
