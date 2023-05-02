@@ -14,10 +14,7 @@ function RightSection3() {
     const[isFollowed,setIsFollowed]=useState(false)
     const [usersToShow, setUsersToShow] = useState(5);
     const [userProfile, setUserProfile] = useState(user)
-    const [thisUser, setThisUser] = useState({
-        user: user,
-        isFollowed: false
-    })
+   
 
    
     const handleShowMore = () => {
@@ -25,15 +22,14 @@ function RightSection3() {
     };
 
    function handleClick(index){
+   
+   const thisUser = {...userProfile[index]}
+   const updated = [...userProfile]
+   thisUser.isFollowed= ! thisUser.isFollowed
+   updated[index]= thisUser
+   setUserProfile(updated)
     
-    console.log(userProfile)
-    setThisUser(userProfile.find((item,id)=> id===index))
-    thisUser.isFollowed=!thisUser.isFollowed
-    setThisUser({...thisUser})
-    
-    // userProfile[index].isFollowed= ! userProfile[index].isFollowed
-    // setUserProfile([...userProfile])
-      
+ 
    }
 
 

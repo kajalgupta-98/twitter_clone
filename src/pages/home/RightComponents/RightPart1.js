@@ -5,7 +5,7 @@ import RightPart2 from "./RightPart2";
 
 function RightPart1() {
   return (
-    <div>
+    <div >
       <div className={style.RightSection}>
         {/* RightPart1 */}
         <div className={style.searchBar}>

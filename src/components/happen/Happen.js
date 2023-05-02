@@ -50,7 +50,7 @@ function Happen () {
     
        <div className={style.data}>
         <div className={style.happen}>
-          <Avatar src="../Images/3.jpg" />
+          <Avatar src="/broken-image.jpg" />
           <textarea  className={style.textArea} 
                      placeholder="What's happening?"
                      onChange={(e)=>setNewTweet(e.target.value)}

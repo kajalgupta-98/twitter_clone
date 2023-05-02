@@ -24,18 +24,7 @@ const HomeNav = () => {
           Following
         </button>
       </div>
-      {/* {activeTab === 'For you' && (
-        <div>
-          <h2>Tab 1 content</h2>
-          <p>This is the content of tab 1.</p>
-        </div>
-      )}
-      {activeTab === 'Following' && (
-        <div>
-          <h2>Tab 2 content</h2>
-          <p>This is the content of tab 2.</p>
-        </div>
-      )} */}
+     
     </div>
     
   )

@@ -1,10 +1,9 @@
 .SidebarLink{
         display:flex;
-        /* padding-left: 1rem; */
-        align-items:cover;
+        align-items:center;
         cursor:pointer;
         border-radius: 30px;
-        
+        height: 3rem;
     }
  .SidebarLink:hover{
     background-color:#d5d7d8;
